@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--FONT AWESOME-->
+    <link rel="stylesheet" href="EstilosGeo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logolcr.png" type="image/x-icon">
+
+    <style>
+        /* Estilos base para la sección hero */
+        #hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Video de fondo */
+        #hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        /* Capa semitransparente */
+        #hero .capa {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        /* Contenedor del contenido */
+        #hero .Promo {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Contenido de texto */
+        .hero-content {
+            text-align: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-text {
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            transform: translateY(-50px); /* Ajuste vertical */
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero-text .lead {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .hero-text .btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background-color: #ec8f26;
+            border: none;
+            transition: all 0.3s;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .hero-text .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Logo (opcional si lo descomentas) */
+        .hero-logo {
+            max-width: 300px;
+            width: 100%;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Animaciones */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text .lead {
+                font-size: 1.2rem;
+            }
+            
+            .hero-logo {
+                max-width: 200px;
+            }
+        }
+
+        
+        /* Tarjetas de locales */
+        .local-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .local-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .local-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .local-card .card-body {
+            padding: 25px;
+        }
+
+        .local-card h5 {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .local-card .btn {
+            background-color: var(--primary-color);
+            border: none;
+            font-weight: 500;
+        }
+   
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
+                <!-- Logo on the left -->
+                <a class="navbar-brand ml-3" href="Home.html">
+                    <img src="lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Real collapse container -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav custom-center-nav d-none d-lg-flex">
+                        <a class="nav-link px-4" href="Menu.html">Menu</a>
+                        <a class="nav-link px-4" href="Nosotros.html">Nosotros</a>
+                        <a class="nav-link px-4" href="Locales.html">Locales</a>
+                    </div>
+
+                    <!-- Mobile menu (visible only on small screens) -->
+                    <div class="navbar-nav d-lg-none text-center w-100 mt-2">
+                        <a class="nav-link" href="Menu.html">Menu</a>
+                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="Locales.html">Locales</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <main id="hero">
+       
+        <video muted autoplay loop>
+            <source src="vide.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="capa"></div>
+    </main> -->
+    
+    <main id="hero">
+        <!-- Video de fondo -->
+        <video muted autoplay loop>
+            <source src="vide.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Capa semitransparente -->
+        <div class="capa"></div>
+        
+        <!-- Contenido superpuesto -->
+        <div class="Promo">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Los auténticos sabores del mar</h1>
+                    <p class="lead">40 años sirviendo la mejor experiencia cebichera</p>
+                    <a href="#menu" class="btn btn-primary">Ver nuestro menú</a>
+                </div>
+                <!-- <img src="logoceb.png" alt="Cebiches La Rumiñahui" class="hero-logo"> -->
+            </div>
+        </div>
+    </main>
+    
+    
+
+    <!-- Sección Menú -->
+    <section id="menu">
+        <div class="container">
+            <h2 class="text-center section-title">Promociones</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card card-local">
+                        <img src="https://placehold.co/600x400" class="card-img-top" alt="Cebiche Clásico">
+                        <div class="card-body text-center">
+                            <h4 class="card-title font-weight-bold">Gran Festín</h4>
+                            <p class="card-text">4 Cebiches grandes (a elegir entre camarón, pescado, concha, mixto completo o calamar)
+                                <br>
+                                4 porciones a elegir: arroz, patacón, maduro o yuca.
+                                <br>
+                                1 litro de gaseosa</p>
+                            <p class="price font-weight-bold text-primary">Menús Familiares</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-local">
+                        <img src="https://placehold.co/600x400" class="card-img-top" alt="Tiradito">
+                        <div class="card-body text-center">
+                            <h4 class="card-title font-weight-bold">Gran Festín Ideal</h4>
+                            <p class="card-text">3 Cebiches de camaron jr
+                                <br>
+                                3 Pescados asados jr
+                                <br>
+                                1 Asado mixto
+                                <br>
+                                1 Gaseosa familiar</p>
+                            <p class="price font-weight-bold text-primary">Menús Familiares</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-local">
+                        <img src="https://placehold.co/600x400" class="card-img-top" alt="Arroz con Mariscos">
+                        <div class="card-body text-center">
+                            <h4 class="card-title font-weight-bold">Combos Futboleros</h4>
+                        </h4>
+                            <p class="card-text">Conchitas asadas
+                                Camarones apanados
+                                <br>
+                                Pescado Asado con menestra de lenteja.
+                                <br>
+                                Encebollado
+                                <br>
+                                Cebiche de camarón
+                                <br>
+                                Gaseosa Familiar.</p>
+                            <p class="price font-weight-bold text-primary">Menús Familiares</p>
+                            <a href="#" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://placehold.co/600x400" alt="Nuestro Restaurante" class="img-fluid rounded-lg shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Nuestra Historia</h2>
+                    <p class="lead">Empezamos en la Ciudadela Rumiñahui de la ciudad de Quito, en el mes de Diciembre del año 1985 con un pequeño negocio de comida del mar con sabor manaba. Nuestros primeros clientes nos bautizaron como: «Los Cebiches de la Rumiñahui» nombre que adoptamos con cariño y orgullo hasta la fecha.</p>
+                    <div class="mt-4 pt-2">
+                        <div class="d-flex">
+                            <div class="mr-4 text-primary">
+                                <i class="fas fa-utensils fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-weight-bold">Frescura Garantizada</h5>
+                              
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="mr-4 text-primary">
+                                <i class="fas fa-utensils fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-weight-bold">Tradición Familiar</h5>
+                                <hr>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Locales -->
+    <section id="locales">
+        <div class="container">
+            <h2 class="text-center section-title">Nuestros Locales</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card local-card">
+                        <div class="card-body">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.369734440759!2d-78.43652158459273!3d-0.1972377236563692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590e3b7cf2b59%3A0x6c05458cb9717019!2sLos%20Cebiches%20de%20la%20Rumi%C3%B1ahui%20Cumbay%C3%A1!5e1!3m2!1ses-419!2sec!4v1746590342007!5m2!1ses-419!2sec"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <h5 class="card-title">Cumbayá</h5>
+                            <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> Av. Pampite lote 11 y Pasaje
+                                Padre Benítez, Quito, Pichincha, EC170902</p>
+                            <p class="card-text"><i class="fas fa-phone mr-2"></i> (+593) 2 2 895 200</p>
+                            <p class="card-text"><i class="fas fa-clock mr-2"></i> Lunes a Domingo: 08:00 AM - 04:00 PM
+                            </p>
+                            <a href="https://maps.google.com/?q=Av+Pampite+lote+11+y+Pasaje+Padre+Benítez+Quito"
+                                class="btn btn-primary" target="_blank">Ver en mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card local-card">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.7504203647901!2d-78.4977346305472!3d-0.17733769999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59b5f248e4e1b%3A0xd894e332a32b307e!2sAv%20Real%20Audiencia%20N59-121%2C%20Quito%20170144!5e0!3m2!1ses-419!2sec!4v1715092912345!5m2!1ses-419!2sec"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="card-body">
+                            <h5 class="card-title">Real Audiencia</h5>
+                            <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> Av Real Audiencia N 59-121,
+                                Quito, Pichincha, EC170144</p>
+                            <p class="card-text"><i class="fas fa-phone mr-2"></i> (+593) 2 2598 423</p>
+                            <p class="card-text"><i class="fas fa-clock mr-2"></i> Lunes a Domingo: 08:00 AM - 04:00 PM
+                            </p>
+                            <a href="https://maps.google.com/?q=Av+Real+Audiencia+N+59-121+Quito"
+                                class="btn btn-primary" target="_blank">Ver en mapa</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card local-card">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15903.726406031164!2d-78.49727115!3d-0.19181314999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a3a94d3d2e1%3A0x88978ad199f393d7!2sAv.%20Amazonas%20%26%20Naciones%20Unidas%2C%20Quito!5e0!3m2!1ses-419!2sec!4v1715099999999!5m2!1ses-419!2sec"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="card-body">
+                            <h5 class="card-title">Amazonas</h5>
+                            <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> Av. Amazonas y NNUU, Quito,
+                                Pichincha, EC170135</p>
+                            <p class="card-text"><i class="fas fa-phone mr-2"></i> (+593) 3932999</p>
+                            <p class="card-text"><i class="fas fa-clock mr-2"></i> Lunes a Domingo: 10:00 AM - 07:00 PM
+                            </p>
+                            <a href="https://maps.google.com/?q=Av.+Amazonas+y+NNUU+Quito" class="btn btn-primary"
+                                target="_blank">Ver en mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+    <!-- Sección Menú -->
+    <section id="menu" class="py-5" style="background-color: #f8f9fa; display: none;">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestro Menú</h2>
+            <div class="row">
+                <!-- Aquí puedes agregar los items del menú -->
+                <div class="col-md-12 text-center">
+                    <p>Contenido del menú aparecerá aquí</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="py-5" style="background-color: #fff; display: none;">
+        <div class="container">
+            <h2 class="text-center mb-5">Sobre Nosotros</h2>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Información sobre tu restaurante aparecerá aquí</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Locales -->
+  
+
+
+    <footer>
+        <div class="container-fluid pie">
+          <div class="row justify-content-center text-center cabeza">
+            <div class="col-12 mt-4">
+              <a href="#" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
+              <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA" class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="col-12 py-3">
+              <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

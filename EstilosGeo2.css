@@ -1,0 +1,204 @@
+
+        
+        .cabeza {
+            background-color: #4CAF50; /* Green */
+            color: white; /* White text */
+        }
+        
+        .nav-link {
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ec8f26 !important;
+        }
+        
+        .nav-link {
+          position: relative;
+          margin: 0 15px;
+      }
+      
+      .nav-link::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 3px;
+          background: var(--primary-color);
+          bottom: 0;
+          left: 0;
+          transition: width 0.3s;
+      }
+      
+      .nav-link:hover::after {
+          width: 100%;
+      }
+        
+        .Icons {
+            font-size: 30px;
+        }
+        
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        #hero .Promo img {
+            position: absolute;
+            z-index: 3;
+            width: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%); }
+            50% { transform: translate(-50%, -55%); }
+        }
+        
+        #hero video {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+      
+      #hero .capa {
+          position: absolute;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+      }
+      
+        /* ESTILOS ADICIONALES */
+        :root {
+            --primary-color: #ec8f26;
+            --secondary-color: #4CAF50;
+            --dark-color: #333;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        
+        
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        #menu {
+            background-color: #f9f9f9;
+        }
+        
+        #nosotros {
+            background-color: white;
+        }
+        
+        #locales {
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 50px;
+            position: relative;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .card-local {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            background: white;
+        }
+        
+        .card-local:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-local img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e07d1a;
+        }
+        
+        .pie {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .Icons {
+            color: white;
+            transition: all 0.3s;
+            margin: 0 20px;
+        }
+        
+        .Icons:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s;
+        }
+        
+        .scrolled {
+            padding: 10px 0 !important;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .scrolled .navbar-brand img {
+            height: 50px !important;
+        }
+        .custom-center-nav {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+     
