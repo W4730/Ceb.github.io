@@ -3,22 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
+    <title>Picadita de calamar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--FONT AWESOME-->
-    <link rel="stylesheet" href="Estilos.css">
+    <link rel="stylesheet" href="../EstilosGeo2.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="logolcr.png" type="image/x-icon">
-     <link rel="stylesheet" href="EstilosGeo.css">
-
+    <link rel="shortcut icon" href="../logolcr.png" type="image/x-icon">
+    <style>
+        body {
+          font-family: 'Montserrat', sans-serif;
+        }
+    
+        .dish-image {
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+    
+        .dish-name {
+          font-weight: 700;
+          font-size: 2rem;
+          margin-top: 30px;
+        }
+    
+        .dish-description {
+          font-size: 1.1rem;
+          color: #555;
+          margin-top: 15px;
+        }
+      </style>
 </head>
+
 <body>
     <header>
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
                 <!-- Logo on the left -->
-                <a class="navbar-brand ml-3" href="index.html">
-                    <img src="lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
+                <a class="navbar-brand ml-3" href="../index.html">
+                    <img src="../lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
                 </a>
 
                 <!-- Toggle button for mobile -->
@@ -31,102 +54,61 @@
                 <!-- Real collapse container -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav custom-center-nav d-none d-lg-flex">
-                        <a class="nav-link px-4" href="Menu.html">Menu</a>
-                        <a class="nav-link px-4" href="Nosotros.html">Nosotros</a>
-                        <a class="nav-link px-4" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4" href="../Menu.html">Menu</a>
+                        <a class="nav-link px-4" href="../Nosotros.html">Nosotros</a>
+                        <a class="nav-link px-4" href="../Locales.html">Locales</a>
                         <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
                             data-target="#loginModal">Ingresar</a>
                     </div>
 
                     <div class="ml-auto d-flex align-items-center">
                         <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
-                            data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
+                            data-target="#cartModal" onclick="toggleCart()">
                             <i class="fa fa-shopping-cart fa-lg"></i>
-                            <span id="cartCountBubble" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
                         </button>
                     </div>
 
                     <!-- Mobile menu (visible only on small screens) -->
                     <div class="navbar-nav d-lg-none text-center w-100 mt-2">
-                        <a class="nav-link" href="Menu.html">Menu</a>
-                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
-                        <a class="nav-link" href="Locales.html">Locales</a>
+                        <a class="nav-link" href="../Menu.html">Menu</a>
+                        <a class="nav-link" href="../Nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="../Locales.html">Locales</a>
                         <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
                             data-target="#loginModal">Login</a>
-                        <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
-                            onclick="toggleCart()" style="position: relative;">
+                            <button class="btn btn-link nav-link px-4" data-toggle="modal"
+                            data-target="#cartModal" onclick="toggleCart()">
                             <i class="fa fa-shopping-cart fa-lg"></i>
-                            <span id="cartCountBubbleMobile" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
                         </button>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
-    <br><br><br><br><br>
-    <div class="container">
-    <h3 class="section-title my-3">Combos</h3>
-        <div class="row">
-            <div class="col-6 col-md-3 mb-4">
-                <a href="platos/ComboFutbolero 1.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Combo Futbolero 1</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <a href="platos/ComboFutbolero2.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Combo Futbolero 2</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <a href="platos/GranFestín.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Gran Festin</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <a href="platos/GranFestínIdeal.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Gran Festin Ideal</p>
-                    </div>
-                </div>
-            </a>
-            </div>
-        </div>
-    </div>
-    <br><br><br><br><br>
-        <footer>
-            <div class="container-fluid pie px-0">
-                <div class="row no-gutters justify-content-center text-center w-100 m-0 cabeza">
-                    <div class="col-12 mt-4">
-                        <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
+    <main class="container text-center mt-5 mb-5">
+      <img src="https://placehold.co/800x500?text=Picadita+Calamar" alt="Picadita de calamar" class="dish-image" />
+    <h1 class="dish-name">Picadita de calamar</h1>
+    <p class="dish-description">
+      Deliciosos aritos de calamar apanados, y que mejor acompañamiento que deliciosos patacones crocantes.
+        </p>
+</main>
+    
+    <footer>
+        <div class="container-fluid pie">
+          <div class="row justify-content-center text-center cabeza">
+            <div class="col-12 mt-4">
+              <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
                     <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i
                             class="fa fa-instagram"></i></a>
                     <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA"
                         class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
-                    </div>
-                    <div class="col-12 py-3">
-                        <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
-                    </div>
-                </div>
             </div>
-        </footer>
-        <!-- Modal -->
+            <div class="col-12 py-3">
+              <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -211,70 +193,6 @@
             var cartPanel = document.getElementById('cartPanel');
             cartPanel.classList.toggle('open');
         }
-    </script>
-    <script>
-        // Load cart from localStorage or initialize
-        var cart = [];
-        try {
-            var storedCart = localStorage.getItem('cart');
-            if (storedCart) {
-                cart = JSON.parse(storedCart);
-            }
-        } catch (e) { cart = []; }
-
-        function addToCart(productName) {
-            cart.push(productName);
-            try {
-                localStorage.setItem('cart', JSON.stringify(cart));
-            } catch (e) {}
-            updateCartUI();
-            updateCartCountBubble();
-        }
-
-        function updateCartUI() {
-            var cartList = document.getElementById('cartItems');
-            if (!cartList) return;
-            cartList.innerHTML = '';
-            if (cart.length === 0) {
-                cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
-                return;
-            }
-            cart.forEach(function (item, index) {
-                var li = document.createElement('li');
-                li.className = 'list-group-item d-flex justify-content-between align-items-center';
-                li.innerHTML = `
-                ${item}
-                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">&times;</button>
-            `;
-                cartList.appendChild(li);
-            });
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            try {
-                localStorage.setItem('cart', JSON.stringify(cart));
-            } catch (e) {}
-            updateCartUI();
-            updateCartCountBubble();
-        }
-
-        function updateCartCountBubble() {
-            var bubble = document.getElementById('cartCountBubble');
-            var bubbleMobile = document.getElementById('cartCountBubbleMobile');
-            [bubble, bubbleMobile].forEach(function(b) {
-                if (!b) return;
-                if (cart.length > 0) {
-                    b.textContent = cart.length;
-                    b.style.display = 'inline-block';
-                } else {
-                    b.style.display = 'none';
-                }
-            });
-        }
-        // Initialize cart UI and bubble on page load
-        updateCartUI && updateCartUI();
-        updateCartCountBubble && updateCartCountBubble();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

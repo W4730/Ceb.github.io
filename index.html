@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--FONT AWESOME-->
     <link rel="stylesheet" href="EstilosGeo.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="logolcr.png" type="image/x-icon">
@@ -20,7 +23,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* Video de fondo */
         #hero video {
             position: absolute;
@@ -31,7 +34,7 @@
             object-fit: cover;
             z-index: 1;
         }
-        
+
         /* Capa semitransparente */
         #hero .capa {
             position: absolute;
@@ -42,7 +45,7 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 2;
         }
-        
+
         /* Contenedor del contenido */
         #hero .Promo {
             position: relative;
@@ -53,7 +56,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* Contenido de texto */
         .hero-content {
             text-align: center;
@@ -61,26 +64,27 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .hero-text {
             color: white;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-            transform: translateY(-50px); /* Ajuste vertical */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            transform: translateY(-50px);
+            /* Ajuste vertical */
         }
-        
+
         .hero-text h1 {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-out;
         }
-        
+
         .hero-text .lead {
             font-size: 1.5rem;
             margin-bottom: 30px;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
-        
+
         .hero-text .btn {
             padding: 12px 30px;
             font-size: 1.1rem;
@@ -91,12 +95,12 @@
             transition: all 0.3s;
             animation: fadeIn 1s ease-out 0.6s both;
         }
-        
+
         .hero-text .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        
+
         /* Logo (opcional si lo descomentas) */
         .hero-logo {
             max-width: 300px;
@@ -104,56 +108,70 @@
             margin-bottom: 30px;
             animation: float 3s ease-in-out infinite;
         }
-        
+
         /* Animaciones */
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
-        
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-text h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-text .lead {
                 font-size: 1.2rem;
             }
-            
+
             .hero-logo {
                 max-width: 200px;
             }
         }
 
-        
+
         /* Tarjetas de locales */
         .local-card {
             border: none;
@@ -188,11 +206,11 @@
             border: none;
             font-weight: 500;
         }
-   
     </style>
 </head>
+
 <body>
-   
+
     <header>
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
@@ -214,6 +232,16 @@
                         <a class="nav-link px-4" href="Menu.html">Menu</a>
                         <a class="nav-link px-4" href="Nosotros.html">Nosotros</a>
                         <a class="nav-link px-4" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Ingresar</a>
+                    </div>
+
+                    <div class="ml-auto d-flex align-items-center">
+                        <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
+                            data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubble" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                     </div>
 
                     <!-- Mobile menu (visible only on small screens) -->
@@ -221,30 +249,29 @@
                         <a class="nav-link" href="Menu.html">Menu</a>
                         <a class="nav-link" href="Nosotros.html">Nosotros</a>
                         <a class="nav-link" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Login</a>
+                        <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
+                            onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubbleMobile" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- <main id="hero">
-       
-        <video muted autoplay loop>
-            <source src="vide.mp4" type="video/mp4">
-            Tu navegador no soporta videos HTML5.
-        </video>
-        <div class="capa"></div>
-    </main> -->
-    
+
     <main id="hero">
         <!-- Video de fondo -->
         <video muted autoplay loop>
             <source src="vide.mp4" type="video/mp4">
         </video>
-        
+
         <!-- Capa semitransparente -->
         <div class="capa"></div>
-        
+
         <!-- Contenido superpuesto -->
         <div class="Promo">
             <div class="hero-content">
@@ -257,64 +284,44 @@
             </div>
         </div>
     </main>
-    
-    
+
+
 
     <!-- Sección Menú -->
     <section id="menu">
         <div class="container">
             <h2 class="text-center section-title">Promociones</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card card-local">
+                <div class="col-md-4 d-flex align-items-stretch pr-md-2">
+                    <div class="card card-local h-100 animated fadeInUp mb-4 w-100">
                         <img src="https://placehold.co/600x400" class="card-img-top" alt="Cebiche Clásico">
-                        <div class="card-body text-center">
+                        <div class="card-body d-flex flex-column text-center">
                             <h4 class="card-title font-weight-bold">Gran Festín</h4>
-                            <p class="card-text">4 Cebiches grandes (a elegir entre camarón, pescado, concha, mixto completo o calamar)
-                                <br>
-                                4 porciones a elegir: arroz, patacón, maduro o yuca.
-                                <br>
-                                1 litro de gaseosa</p>
+                            <p class="card-text flex-grow-1">4 Cebiches grandes (a elegir entre camarón, pescado, concha, mixto completo o calamar)<br>4 porciones a elegir: arroz, patacón, maduro o yuca.<br>1 litro de gaseosa</p>
                             <p class="price font-weight-bold text-primary">Menús Familiares</p>
-                            <a href="GranFestín.html" class="btn btn-primary">Ver más</a>
+                            <a href="platos/GranFestín.html" class="btn btn-primary mt-auto">Ver más</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card card-local">
+                <div class="col-md-4 d-flex align-items-stretch px-md-1">
+                    <div class="card card-local h-100 animated fadeInUp mb-4 w-100" style="animation-delay:0.1s;">
                         <img src="https://placehold.co/600x400" class="card-img-top" alt="Tiradito">
-                        <div class="card-body text-center">
+                        <div class="card-body d-flex flex-column text-center">
                             <h4 class="card-title font-weight-bold">Gran Festín Ideal</h4>
-                            <p class="card-text">3 Cebiches de camaron jr
-                                <br>
-                                3 Pescados asados jr
-                                <br>
-                                1 Asado mixto
-                                <br>
-                                1 Gaseosa familiar</p>
+                            <p class="card-text flex-grow-1">3 Cebiches de camaron jr<br>3 Pescados asados jr<br>1 Asado mixto<br>1 Gaseosa familiar</p>
                             <p class="price font-weight-bold text-primary">Menús Familiares</p>
-                            <a href="GranFestínIdeal.html" class="btn btn-primary">Ver más</a>
+                            <a href="platos/GranFestínIdeal.html" class="btn btn-primary mt-auto">Ver más</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card card-local">
+                <div class="col-md-4 d-flex align-items-stretch pl-md-2">
+                    <div class="card card-local h-100 animated fadeInUp mb-4 w-100" style="animation-delay:0.2s;">
                         <img src="https://placehold.co/600x400" class="card-img-top" alt="Arroz con Mariscos">
-                        <div class="card-body text-center">
+                        <div class="card-body d-flex flex-column text-center">
                             <h4 class="card-title font-weight-bold">Combos Futboleros</h4>
-                        </h4>
-                            <p class="card-text">Conchitas asadas
-                                Camarones apanados
-                                <br>
-                                Pescado Asado con menestra de lenteja.
-                                <br>
-                                Encebollado
-                                <br>
-                                Cebiche de camarón
-                                <br>
-                                Gaseosa Familiar.</p>
+                            <p class="card-text flex-grow-1">Conchitas asadas<br>Camarones apanados<br>Pescado Asado con menestra de lenteja.<br>Encebollado<br>Cebiche de camarón<br>Gaseosa Familiar.</p>
                             <p class="price font-weight-bold text-primary">Menús Familiares</p>
-                            <a href="ComboFutbolero 1.html" class="btn btn-primary">Ver más</a>
+                            <a href="platos/ComboFutbolero 1.html" class="btn btn-primary mt-auto">Ver más</a>
                         </div>
                     </div>
                 </div>
@@ -327,11 +334,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="https://placehold.co/600x400" alt="Nuestro Restaurante" class="img-fluid rounded-lg shadow">
+                    <img src="https://placehold.co/600x400" alt="Nuestro Restaurante"
+                        class="img-fluid rounded-lg shadow">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title">Nuestra Historia</h2>
-                    <p class="lead">Empezamos en la Ciudadela Rumiñahui de la ciudad de Quito, en el mes de Diciembre del año 1985 con un pequeño negocio de comida del mar con sabor manaba. Nuestros primeros clientes nos bautizaron como: «Los Cebiches de la Rumiñahui» nombre que adoptamos con cariño y orgullo hasta la fecha.</p>
+                    <p class="lead">Empezamos en la Ciudadela Rumiñahui de la ciudad de Quito, en el mes de Diciembre
+                        del año 1985 con un pequeño negocio de comida del mar con sabor manaba. Nuestros primeros
+                        clientes nos bautizaron como: «Los Cebiches de la Rumiñahui» nombre que adoptamos con cariño y
+                        orgullo hasta la fecha.</p>
                     <div class="mt-4 pt-2">
                         <div class="d-flex">
                             <div class="mr-4 text-primary">
@@ -339,7 +350,7 @@
                             </div>
                             <div>
                                 <h5 class="font-weight-bold">Frescura Garantizada</h5>
-                              
+
                             </div>
                         </div>
                         <div class="d-flex">
@@ -356,70 +367,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Sección Locales -->
-    <section id="locales">
-        <div class="container">
-            <h2 class="text-center section-title">Nuestros Locales</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card local-card">
-                        <div class="card-body">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.369734440759!2d-78.43652158459273!3d-0.1972377236563692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590e3b7cf2b59%3A0x6c05458cb9717019!2sLos%20Cebiches%20de%20la%20Rumi%C3%B1ahui%20Cumbay%C3%A1!5e1!3m2!1ses-419!2sec!4v1746590342007!5m2!1ses-419!2sec"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <h5 class="card-title">Cumbayá</h5>
-                            <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> Av. Pampite lote 11 y Pasaje
-                                Padre Benítez, Quito, Pichincha, EC170902</p>
-                            <p class="card-text"><i class="fas fa-phone mr-2"></i> (+593) 2 2 895 200</p>
-                            <p class="card-text"><i class="fas fa-clock mr-2"></i> Lunes a Domingo: 08:00 AM - 04:00 PM
-                            </p>
-                            <a href="https://maps.google.com/?q=Av+Pampite+lote+11+y+Pasaje+Padre+Benítez+Quito"
-                                class="btn btn-primary" target="_blank">Ver en mapa</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card local-card">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.7504203647901!2d-78.4977346305472!3d-0.17733769999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59b5f248e4e1b%3A0xd894e332a32b307e!2sAv%20Real%20Audiencia%20N59-121%2C%20Quito%20170144!5e0!3m2!1ses-419!2sec!4v1715092912345!5m2!1ses-419!2sec"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div class="card-body">
-                            <h5 class="card-title">Real Audiencia</h5>
-                            <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> Av Real Audiencia N 59-121,
-                                Quito, Pichincha, EC170144</p>
-                            <p class="card-text"><i class="fas fa-phone mr-2"></i> (+593) 2 2598 423</p>
-                            <p class="card-text"><i class="fas fa-clock mr-2"></i> Lunes a Domingo: 08:00 AM - 04:00 PM
-                            </p>
-                            <a href="https://maps.google.com/?q=Av+Real+Audiencia+N+59-121+Quito"
-                                class="btn btn-primary" target="_blank">Ver en mapa</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card local-card">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15903.726406031164!2d-78.49727115!3d-0.19181314999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a3a94d3d2e1%3A0x88978ad199f393d7!2sAv.%20Amazonas%20%26%20Naciones%20Unidas%2C%20Quito!5e0!3m2!1ses-419!2sec!4v1715099999999!5m2!1ses-419!2sec"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazonas</h5>
-                            <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> Av. Amazonas y NNUU, Quito,
-                                Pichincha, EC170135</p>
-                            <p class="card-text"><i class="fas fa-phone mr-2"></i> (+593) 3932999</p>
-                            <p class="card-text"><i class="fas fa-clock mr-2"></i> Lunes a Domingo: 10:00 AM - 07:00 PM
-                            </p>
-                            <a href="https://maps.google.com/?q=Av.+Amazonas+y+NNUU+Quito" class="btn btn-primary"
-                                target="_blank">Ver en mapa</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
     </section>
     <!-- Sección Menú -->
     <section id="menu" class="py-5" style="background-color: #f8f9fa; display: none;">
@@ -447,24 +394,179 @@
     </section>
 
     <!-- Sección Locales -->
-  
-
-
     <footer>
         <div class="container-fluid pie">
-          <div class="row justify-content-center text-center cabeza">
-            <div class="col-12 mt-4">
-              <a href="#" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
-              <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA" class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
+            <div class="row justify-content-center text-center cabeza">
+                <div class="col-12 mt-4">
+                    <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
+                    <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i
+                            class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA"
+                        class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="col-12 py-3">
+                    <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
+                </div>
             </div>
-            <div class="col-12 py-3">
-              <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
-            </div>
-          </div>
         </div>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="emailInput">Correo Electronico</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Correo Electronico">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInput">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <button type="button" class="btn btn-link btn-sm p-0">Se te olvido la contraseña?</button>
+                            <button type="button" class="btn btn-link btn-sm p-0">Crear una cuenta</button>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mb-3 py-3 font-weight-bold">
+                            Entrar
+                        </button>
+
+                        <button type="button" class="btn btn-outline-danger btn-block mb-2 py-3 font-weight-bold"
+                            style="font-size: 1rem;">
+                            <i class="fa fa-google mr-2"></i> Registrarse con Google
+                        </button>
+
+                        <button type="button" class="btn btn-outline-primary btn-block py-3 font-weight-bold"
+                            style="font-size: 1rem;">
+                            <i class="fa fa-facebook mr-2"></i> Registrarse con Facebook
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cartPanel">
+        <div class="cart-header">
+            <h5>Your Cart</h5>
+            <button type="button" class="close" aria-label="Close" onclick="toggleCart()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="cart-body">
+            <ul id="cartItems" class="list-group mb-3">
+                <li class="list-group-item">No items in cart</li>
+            </ul>
+            <button class="btn btn-primary btn-block">Check-out</button>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var loginForm = document.querySelector('#loginModal form');
+            var loginLinks = document.querySelectorAll('.navbar .login-link');
+
+            if (loginForm && loginLinks.length > 0) {
+                loginForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    $('#loginModal').modal('hide');
+                    // Hide all login links
+                    loginLinks.forEach(function (link) {
+                        link.style.display = 'none';
+                    });
+                });
+            }
+        });
+    </script>
+    <script>
+        function toggleCart() {
+            var cartPanel = document.getElementById('cartPanel');
+            cartPanel.classList.toggle('open');
+        }
+    </script>
+
+    <script>
+        // Load cart from localStorage or initialize
+        var cart = [];
+        try {
+            var storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+            }
+        } catch (e) { cart = []; }
+
+        function addToCart(productName) {
+            cart.push(productName);
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) {}
+            updateCartUI();
+            updateCartCountBubble();
+        }
+
+        function updateCartUI() {
+            var cartList = document.getElementById('cartItems');
+            if (!cartList) return;
+            cartList.innerHTML = '';
+            if (cart.length === 0) {
+                cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
+                return;
+            }
+            cart.forEach(function (item, index) {
+                var li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.innerHTML = `
+                ${item}
+                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">&times;</button>
+            `;
+                cartList.appendChild(li);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) {}
+            updateCartUI();
+            updateCartCountBubble();
+        }
+
+        function updateCartCountBubble() {
+            var bubble = document.getElementById('cartCountBubble');
+            var bubbleMobile = document.getElementById('cartCountBubbleMobile');
+            [bubble, bubbleMobile].forEach(function(b) {
+                if (!b) return;
+                if (cart.length > 0) {
+                    b.textContent = cart.length;
+                    b.style.display = 'inline-block';
+                } else {
+                    b.style.display = 'none';
+                }
+            });
+        }
+        // Initialize cart UI and bubble on page load
+        updateCartUI && updateCartUI();
+        updateCartCountBubble && updateCartCountBubble();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

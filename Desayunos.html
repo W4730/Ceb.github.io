@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="Estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="logolcr.png" type="image/x-icon">
+    <link rel="stylesheet" href="EstilosGeo.css">
 
 </head>
 
@@ -37,6 +38,16 @@
                         <a class="nav-link px-4" href="Menu.html">Menu</a>
                         <a class="nav-link px-4" href="Nosotros.html">Nosotros</a>
                         <a class="nav-link px-4" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Ingresar</a>
+                    </div>
+
+                    <div class="ml-auto d-flex align-items-center">
+                        <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
+                            data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubble" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                     </div>
 
                     <!-- Mobile menu (visible only on small screens) -->
@@ -44,6 +55,13 @@
                         <a class="nav-link" href="Menu.html">Menu</a>
                         <a class="nav-link" href="Nosotros.html">Nosotros</a>
                         <a class="nav-link" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Login</a>
+                        <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
+                            onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubbleMobile" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -53,7 +71,7 @@
         <h3 class="section-title my-3">Desayunos</h3>
         <div class="row">
             <div class="col-6 col-md-3 mb-4">
-                <a href="Tigrilloconestofadodecamarón.html">
+                <a href="platos/Tigrilloconestofadodecamarón.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -63,7 +81,7 @@
             </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="Tigrilloconestofadodepescado.html">
+                <a href="platos/Tigrilloconestofadodepescado.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -73,7 +91,7 @@
             </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="Tigrilloconhuevo.html">
+                <a href="platos/Tigrilloconhuevo.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -83,7 +101,7 @@
             </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="DesayunoMontubio.html">
+                <a href="platos/DesayunoMontubio.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -94,7 +112,7 @@
             </div>
 
             <div class="col-6 col-md-3 mb-4">
-                <a href="DesayunoMarinero.html">
+                <a href="platos/DesayunoMarinero.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -105,7 +123,7 @@
             </div>
 
             <div class="col-6 col-md-3 mb-4">
-                <a href="DesayunoManaba.html">
+                <a href="platos/DesayunoManaba.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -116,7 +134,7 @@
             </div>
 
             <div class="col-6 col-md-3 mb-4">
-                <a href="DesayunoMañanero.html">
+                <a href="platos/DesayunoMañanero.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -127,7 +145,7 @@
             </div>
 
             <div class="col-6 col-md-3 mb-4">
-                <a href="DesayunoCosteño.html">
+                <a href="platos/DesayunoCosteño.html">
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.co/600x400" alt="Combo">
                     <div class="card-body text-center p-2">
@@ -142,12 +160,11 @@
         <div class="container-fluid pie">
             <div class="row">
                 <div class="col-12 text-center cabeza">
-                    <a href="" target="_blank" class="text-light Icons mr-5"><i class="fa fa-phone"
-                            aria-hidden="true"></i></a>
-                    <a href="" target="_blank" class="text-light Icons mr-5"><i class="fa fa-instagram"
-                            aria-hidden="true"></i></a>
-                    <a href="" target="_blank" class="text-light Icons mr-5"><i class="fa fa-facebook"
-                            aria-hidden="true"></i></a>
+                    <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
+                    <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i
+                            class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA"
+                        class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
                 </div>
                 <div class="col-12 text-center py-3 cabeza">
                     <p class="text-light">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
@@ -155,6 +172,156 @@
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="emailInput">Correo Electronico</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Correo Electronico">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInput">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <button type="button" class="btn btn-link btn-sm p-0">Se te olvido la contraseña?</button>
+                            <button type="button" class="btn btn-link btn-sm p-0">Crear una cuenta</button>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block mb-3 py-3 font-weight-bold">
+                            Entrar
+                        </button>
+
+                        <button type="button" class="btn btn-outline-danger btn-block mb-2 py-3 font-weight-bold"
+                            style="font-size: 1rem;">
+                            <i class="fa fa-google mr-2"></i> Registrarse con Google
+                        </button>
+
+                        <button type="button" class="btn btn-outline-primary btn-block py-3 font-weight-bold"
+                            style="font-size: 1rem;">
+                            <i class="fa fa-facebook mr-2"></i> Registrarse con Facebook
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cartPanel">
+        <div class="cart-header">
+            <h5>Your Cart</h5>
+            <button type="button" class="close" aria-label="Close" onclick="toggleCart()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="cart-body">
+            <ul id="cartItems" class="list-group mb-3">
+                <li class="list-group-item">No items in cart</li>
+            </ul>
+            <button class="btn btn-primary btn-block">Check-out</button>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var loginForm = document.querySelector('#loginModal form');
+            var loginLinks = document.querySelectorAll('.navbar .login-link');
+
+            if (loginForm && loginLinks.length > 0) {
+                loginForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    $('#loginModal').modal('hide');
+                    // Hide all login links
+                    loginLinks.forEach(function (link) {
+                        link.style.display = 'none';
+                    });
+                });
+            }
+        });
+    </script>
+    <script>
+        function toggleCart() {
+            var cartPanel = document.getElementById('cartPanel');
+            cartPanel.classList.toggle('open');
+        }
+    </script>
+    <script>
+        // Load cart from localStorage or initialize
+        var cart = [];
+        try {
+            var storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+            }
+        } catch (e) { cart = []; }
+
+        function addToCart(productName) {
+            cart.push(productName);
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) {}
+            updateCartUI();
+            updateCartCountBubble();
+        }
+
+        function updateCartUI() {
+            var cartList = document.getElementById('cartItems');
+            if (!cartList) return;
+            cartList.innerHTML = '';
+            if (cart.length === 0) {
+                cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
+                return;
+            }
+            cart.forEach(function (item, index) {
+                var li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.innerHTML = `
+                ${item}
+                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">&times;</button>
+            `;
+                cartList.appendChild(li);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) {}
+            updateCartUI();
+            updateCartCountBubble();
+        }
+
+        function updateCartCountBubble() {
+            var bubble = document.getElementById('cartCountBubble');
+            var bubbleMobile = document.getElementById('cartCountBubbleMobile');
+            [bubble, bubbleMobile].forEach(function(b) {
+                if (!b) return;
+                if (cart.length > 0) {
+                    b.textContent = cart.length;
+                    b.style.display = 'inline-block';
+                } else {
+                    b.style.display = 'none';
+                }
+            });
+        }
+        // Initialize cart UI and bubble on page load
+        updateCartUI && updateCartUI();
+        updateCartCountBubble && updateCartCountBubble();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
