@@ -59,10 +59,10 @@
                 <!-- Real collapse container -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav custom-center-nav d-none d-lg-flex">
-                        <a class="nav-link px-4" href="/Menu.html">Menu</a>
-                        <a class="nav-link px-4" href="/Nosotros.html">Nosotros</a>
-                        <a class="nav-link px-4" href="/Locales.html">Locales</a>
-                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                        <a class="nav-link px-4" href="../Menu.html">Menu</a>
+                        <a class="nav-link px-4" href="../Nosotros.html">Nosotros</a>
+                        <a class="nav-link px-4" href="../Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="/" data-toggle="modal"
                             data-target="#loginModal">Ingresar</a>
                     </div>
 
@@ -78,10 +78,10 @@
 
                     <!-- Mobile menu (visible only on small screens) -->
                     <div class="navbar-nav d-lg-none text-center w-100 mt-2">
-                        <a class="nav-link" href="/Menu.html">Menu</a>
-                        <a class="nav-link" href="/Nosotros.html">Nosotros</a>
-                        <a class="nav-link" href="/Locales.html">Locales</a>
-                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                        <a class="nav-link" href="../Menu.html">Menu</a>
+                        <a class="nav-link" href="../Nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="../Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="/" data-toggle="modal"
                             data-target="#loginModal">Login</a>
                         <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
                             onclick="toggleCart()" style="position: relative;">
@@ -96,75 +96,13 @@
     </header>
 
     <main class="container text-center mt-5 mb-5">
-        <img src="/Done/CONCHAS ASADAS copy.jpg" alt="Plato de ejemplo" class="dish-image" />
+        <img src="../Done/CONCHAS ASADAS copy.jpg" alt="Plato de ejemplo" class="dish-image" />
         <h1 class="dish-name">Conchas Asadas</h1>
         <p class="dish-description">
             Jugosas, frescas y con ese ahumado perfecto que solo se logra con tradición.
             Nuestras conchas asadas son seleccionadas a mano, marinadas con limón, ajo y especias manabitas, y luego
             asadas lentamente hasta alcanzar el punto exacto donde el sabor del mar se fusiona con el fuego.
         </p>
-        <div class="card-footer bg-white border-0 d-flex justify-content-center">
-                        <button class="btn btn-primary mt-2 mx-auto"
-                            onclick="event.stopPropagation(); showConchasAsadasOptions()">
-                            <i class="fa fa-plus"></i> Agregar
-                        </button>
-                    </div>
-                    <!-- Modal for Conchas Asadas options -->
-                    <div class="modal fade" id="conchasAsadasModal" tabindex="-1" role="dialog"
-                        aria-labelledby="conchasAsadasModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="conchasAsadasModalLabel">Selecciona un acompañante</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="d-flex flex-wrap justify-content-center">
-                                        <div class="form-check mr-4 mb-2">
-                                            <input class="form-check-input" type="radio" name="conchasAsadasAcomp"
-                                                id="patacones" value="Patacones" checked>
-                                            <label class="form-check-label" for="patacones">Patacones</label>
-                                        </div>
-                                        <div class="form-check mr-4 mb-2">
-                                            <input class="form-check-input" type="radio" name="conchasAsadasAcomp"
-                                                id="maduros" value="Maduros">
-                                            <label class="form-check-label" for="maduros">Maduros</label>
-                                        </div>
-                                        <div class="form-check mr-4 mb-2">
-                                            <input class="form-check-input" type="radio" name="conchasAsadasAcomp"
-                                                id="arroz" value="Arroz">
-                                            <label class="form-check-label" for="arroz">Arroz</label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="radio" name="conchasAsadasAcomp"
-                                                id="yuca" value="Yuca">
-                                            <label class="form-check-label" for="yuca">Yuca</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary"
-                                        onclick="addConchasAsadasToCart()">Agregar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        // Show modal for Conchas Asadas options
-                        function showConchasAsadasOptions() {
-                            $('#conchasAsadasModal').modal('show');
-                        }
-                        // Add Conchas Asadas with selected option to cart
-                        function addConchasAsadasToCart() {
-                            var acomp = document.querySelector('input[name="conchasAsadasAcomp"]:checked').value;
-                            addToCart({ name: 'Conchas Asadas (' + acomp + ')', price: 9.99 });
-                            $('#conchasAsadasModal').modal('hide');
-                        }
-                    </script>
         <div class="card-footer bg-white border-0 d-flex justify-content-center">
                         <button class="btn btn-primary mt-2 mx-auto"
                             onclick="event.stopPropagation(); showConchasAsadasOptions()">
