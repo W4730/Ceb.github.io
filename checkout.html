@@ -1,11 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Check-out</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="Estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logolcr.png" type="image/x-icon">
+    <link rel="stylesheet" href="EstilosGeo.css">
+    <style>
+        /* Checkout page custom styles for minimalist, modern look */
+        .checkout-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .checkout-form,
+        .checkout-summary {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+            padding: 2rem 1.5rem;
+            min-width: 320px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .checkout-form h4,
+        .checkout-summary h4 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ec8f26;
+        }
+
+        .checkout-form label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .checkout-form input,
+        .checkout-form select {
+            border-radius: 30px;
+            border: 1px solid #e0e0e0;
+            padding: 0.75rem 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Fix vertical alignment for select/input-group in Forma de Pago */
+        .checkout-form .input-group .form-control {
+            height: calc(2.25rem + 2px);
+            padding-top: 0.375rem;
+            padding-bottom: 0.375rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .checkout-form .input-group .input-group-text {
+            height: calc(2.25rem + 2px);
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .checkout-form input:focus,
+        .checkout-form select:focus {
+            border-color: #ec8f26;
+            box-shadow: 0 0 0 2px rgba(236, 143, 38, 0.1);
+        }
+
+        .checkout-summary {
+            background: #faf9f6;
+        }
+
+        .checkout-summary ul {
+            margin-bottom: 1.5rem;
+        }
+
+        .checkout-summary .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkout-summary .btn {
+            border-radius: 30px;
+            font-weight: 600;
+            background: #ec8f26;
+            border: none;
+            transition: background 0.2s;
+        }
+
+        .checkout-summary .btn:hover {
+            background: #d97b0d;
+        }
+
+        @media (max-width: 900px) {
+            .checkout-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .checkout-form,
+            .checkout-summary {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
+                <!-- Logo on the left -->
+                <a class="navbar-brand ml-3" href="../index.html">
+                    <img src="../lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Real collapse container -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav custom-center-nav d-none d-lg-flex">
+                        <a class="nav-link px-4" href="Menu.html">Menu</a>
+                        <a class="nav-link px-4" href="Nosotros.html">Nosotros</a>
+                        <a class="nav-link px-4" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Ingresar</a>
+                    </div>
+
+                    <div class="ml-auto d-flex align-items-center">
+                        <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
+                            data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubble"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile menu (visible only on small screens) -->
+                    <div class="navbar-nav d-lg-none text-center w-100 mt-2">
+                        <a class="nav-link" href="Menu.html">Menu</a>
+                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Login</a>
+                        <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
+                            onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubbleMobile"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <h1 class="text-center">Checkout</h1>
+
+        <!-- Flex container for form and cart summary -->
+        <div class="checkout-container">
+            <!-- Left Section: Delivery Information -->
+            <div class="checkout-form">
+                <h4>Delivery Information</h4>
+                <form id="deliveryForm">
+                    <div class="form-group">
+                        <label for="fullName">Nombre y Apellido</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Nombre Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Número de Teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Ciudad</label>
+                        <input type="text" class="form-control" id="city" placeholder="Ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="street">Calle Principal</label>
+                        <input type="text" class="form-control" id="street" placeholder="Calle Principal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondaryStreet">Calle Secundaria</label>
+                        <input type="text" class="form-control" id="secondaryStreet" placeholder="Calle Secundaria">
+                    </div>
+                    <div class="form-group">
+                        <label for="houseNumber">Número de Casa</label>
+                        <input type="text" class="form-control" id="houseNumber" placeholder="Número de Casa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentType">Tipo de Pago</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                            </div>
+                            <select class="form-control" id="paymentType">
+                                <option value="card">Tarjeta</option>
+                                <option value="cash">Efectivo</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Section: Cart Summary -->
+            <div class="checkout-summary">
+                <h4>Cart Summary</h4>
+                <ul id="cartItems" class="list-group mb-3">
+                    <li class="list-group-item">No items in cart</li>
+                </ul>
+                <div class="cart-total">
+                    <p>Total:</p>
+                    <p id="totalAmount">$0.00</p>
+                </div>
+                <button class="btn btn-primary btn-block" onclick="confirmOrder()">Confirm Order</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid pie px-0">
+            <div class="row no-gutters justify-content-center text-center w-100 m-0 cabeza">
+                <div class="col-12 mt-4">
+                    <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
+                    <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i
+                            class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA"
+                        class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="col-12 py-3">
+                    <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Load cart from localStorage or initialize
+        var cart = [];
+        try {
+            var storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+            }
+        } catch (e) { cart = []; }
+
+        // If cart items are objects (with name/price), support both formats
+        function getItemName(item) {
+            return typeof item === 'string' ? item : item.name;
+        }
+        function getItemPrice(item) {
+            return typeof item === 'string' ? (itemPrices[getItemName(item)] || 9.99) : (item.price || 9.99);
+        }
+
+        // Optionally, you can define some default prices for string-only items
+        var itemPrices = {
+            'Combo Futbolero 1': 12.99,
+            'Gran Festín Ideal': 19.99
+            // Add more as needed
+        };
+
+        // Update the cart UI and total value
+        function updateCartUI() {
+            var cartList = document.getElementById('cartItems');
+            var totalAmount = 0;
+            cartList.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
+                document.getElementById('totalAmount').textContent = '$0.00';
+                return;
+            }
+
+            cart.forEach(function (item) {
+                var name = getItemName(item);
+                var price = getItemPrice(item);
+                var li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.innerHTML = name + ' <span>$' + price.toFixed(2) + '</span>';
+                cartList.appendChild(li);
+                totalAmount += price;
+            });
+
+            document.getElementById('totalAmount').textContent = '$' + totalAmount.toFixed(2);
+        }
+
+        // Function to confirm the order
+        function confirmOrder() {
+            alert("Your order has been confirmed! We'll deliver it shortly.");
+            // You can add logic to send the form data to your backend here
+        }
+
+        // Call updateCartUI on page load
+        updateCartUI();
+    </script>
 </body>
+
 </html>

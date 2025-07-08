@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desayuno Manaba</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--FONT AWESOME-->
     <link rel="stylesheet" href="../EstilosGeo2.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../logolcr.png" type="image/x-icon">
     <style>
         body {
-          font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
-    
+
         .dish-image {
-          max-width: 100%;
-          height: auto;
-          border-radius: 10px;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            max-height: 600px; /* Limit height to prevent overflow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
-    
+
         .dish-name {
-          font-weight: 700;
-          font-size: 2rem;
-          margin-top: 30px;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-top: 30px;
         }
-    
+
         .dish-description {
-          font-size: 1.1rem;
-          color: #555;
-          margin-top: 15px;
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 15px;
         }
-      </style>
+    </style>
 </head>
 
 <body>
@@ -54,62 +58,75 @@
                 <!-- Real collapse container -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav custom-center-nav d-none d-lg-flex">
-                        <a class="nav-link px-4" href="../Menu.html">Menu</a>
-                        <a class="nav-link px-4" href="../Nosotros.html">Nosotros</a>
-                        <a class="nav-link px-4" href="../Locales.html">Locales</a>
+                        <a class="nav-link px-4" href="/Menu.html">Menu</a>
+                        <a class="nav-link px-4" href="/Nosotros.html">Nosotros</a>
+                        <a class="nav-link px-4" href="/Locales.html">Locales</a>
                         <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
                             data-target="#loginModal">Ingresar</a>
                     </div>
 
                     <div class="ml-auto d-flex align-items-center">
                         <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
-                            data-target="#cartModal" onclick="toggleCart()">
+                            data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
                             <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubble"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                         </button>
                     </div>
 
                     <!-- Mobile menu (visible only on small screens) -->
                     <div class="navbar-nav d-lg-none text-center w-100 mt-2">
-                        <a class="nav-link" href="../Menu.html">Menu</a>
-                        <a class="nav-link" href="../Nosotros.html">Nosotros</a>
-                        <a class="nav-link" href="../Locales.html">Locales</a>
+                        <a class="nav-link" href="/Menu.html">Menu</a>
+                        <a class="nav-link" href="/Nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="/Locales.html">Locales</a>
                         <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
                             data-target="#loginModal">Login</a>
-                            <button class="btn btn-link nav-link px-4" data-toggle="modal"
-                            data-target="#cartModal" onclick="toggleCart()">
+                        <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
+                            onclick="toggleCart()" style="position: relative;">
                             <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubbleMobile"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
                         </button>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
-    
+
     <main class="container text-center mt-5 mb-5">
-      <img src="https://placehold.co/800x500?text=Desayuno+Manaba" alt="Desayuno Manaba" class="dish-image" />
-    <h1 class="dish-name">Desayuno Manaba</h1>
-    <p class="dish-description">
-      Empieza tu día con un delicioso desayuno manaba, estofado de pescado, crocantes patacones, jugo de naranja 100% natural y un exquisito café para comenzar con energía un día más. Disfruta de los desayunos solo hasta las 12pm.
-    </p>
-</main>
-    
+        <img src="/Done/estofado de pescado copy.jpg" alt="Desayuno Manaba" class="dish-image" />
+        <h1 class="dish-name">Desayuno Manaba</h1>
+        <p class="dish-description">
+            Empieza tu día con un delicioso desayuno manaba, estofado de pescado, crocantes patacones, jugo de naranja
+            100% natural y un exquisito café para comenzar con energía un día más. Disfruta de los desayunos solo hasta
+            las 12pm.
+        </p>
+        <div class="card-footer bg-white border-0 d-flex justify-content-center">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); addToCart('Desayuno Manaba')">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
+                    </div>
+    </main>
+
     <footer>
         <div class="container-fluid pie">
-          <div class="row justify-content-center text-center cabeza">
-            <div class="col-12 mt-4">
-              <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
+            <div class="row justify-content-center text-center cabeza">
+                <div class="col-12 mt-4">
+                    <a href="+593992804444" class="text-light Icons mx-3"><i class="fa fa-phone"></i></a>
                     <a href="https://www.instagram.com/loscebichesdelaruminahui/?hl=es" class="text-light Icons mx-3"><i
                             class="fa fa-instagram"></i></a>
                     <a href="https://www.facebook.com/LosCebichesdelaRuminahui.ec/?locale=es_LA"
                         class="text-light Icons mx-3"><i class="fa fa-facebook"></i></a>
+                </div>
+                <div class="col-12 py-3">
+                    <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
+                </div>
             </div>
-            <div class="col-12 py-3">
-              <p class="text-light mb-0">© Los Cebiches De La Rumiñahui. Todos los derechos reservados.</p>
-            </div>
-          </div>
         </div>
-      </footer>
-      <!-- Modal -->
+    </footer>
+    <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -156,6 +173,14 @@
         </div>
     </div>
     <div id="cartPanel">
+        <!-- Notification Toast -->
+        <div id="cartToast" class="toast position-fixed"
+            style="top: 20px; right: 20px; min-width: 200px; z-index: 2000; display: none; background: #28a745; color: white;"
+            data-delay="1500" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-center p-2">
+                <i class="fa fa-check-circle mr-2"></i>Producto agregado al carrito
+            </div>
+        </div>
         <div class="cart-header">
             <h5>Your Cart</h5>
             <button type="button" class="close" aria-label="Close" onclick="toggleCart()">
@@ -166,6 +191,13 @@
             <ul id="cartItems" class="list-group mb-3">
                 <li class="list-group-item">No items in cart</li>
             </ul>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="font-weight-bold">Total:</span>
+                <span id="cartTotal" class="font-weight-bold text-success">$0.00</span>
+            </div>
+            <button id="clearCartBtn" class="btn btn-danger btn-block mb-2" type="button" onclick="clearCart()">
+                <i class="fa fa-trash"></i> Vaciar carrito
+            </button>
             <button class="btn btn-primary btn-block">Check-out</button>
         </div>
     </div>
@@ -173,6 +205,26 @@
 
     <!-- Scripts -->
     <script>
+        // Show modal for Cebiche de Pescado options
+        function showCebichePescadoOptions() {
+            $('#cebichePescadoModal').modal('show');
+        }
+
+        // Add Cebiche de Pescado with selected option to cart
+        function addCebichePescadoToCart() {
+            var tipo = document.querySelector('input[name="cebichePescadoTipo"]:checked').value;
+            var price = tipo === 'Completo' ? 9.99 : 4.99;
+            addToCart({ name: 'Cebiche de Pescado (' + tipo + ')', price: price });
+            $('#cebichePescadoModal').modal('hide');
+        }
+        function clearCart() {
+            cart = [];
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) { }
+            updateCartUI();
+            updateCartCountBubble();
+        }
         document.addEventListener('DOMContentLoaded', function () {
             var loginForm = document.querySelector('#loginModal form');
             var loginLinks = document.querySelectorAll('.navbar .login-link');
@@ -195,7 +247,113 @@
             cartPanel.classList.toggle('open');
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script>
+        // Load cart from localStorage or initialize
+        var cart = [];
+        try {
+            var storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+            }
+        } catch (e) { cart = []; }
+
+
+        // All dishes are $9.99 for reference
+        var DISH_PRICE = 9.99;
+        function addToCart(product) {
+            // Accepts either a string (old) or an object {name, price}
+            if (typeof product === 'string') {
+                cart.push({ name: product, price: DISH_PRICE });
+            } else {
+                cart.push(product);
+            }
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) { }
+            updateCartUI();
+            updateCartCountBubble();
+            showCartToast();
+        }
+
+        // Show notification toast when item is added
+        function showCartToast() {
+            var toast = document.getElementById('cartToast');
+            if (!toast) return;
+            toast.style.display = 'block';
+            toast.classList.add('show');
+            setTimeout(function () {
+                toast.classList.remove('show');
+                toast.style.display = 'none';
+            }, 1500);
+        }
+
+        function updateCartUI() {
+            var cartList = document.getElementById('cartItems');
+            var cartTotal = document.getElementById('cartTotal');
+            if (!cartList) return;
+            cartList.innerHTML = '';
+            var total = 0;
+            if (cart.length === 0) {
+                cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
+                if (cartTotal) cartTotal.textContent = '$0.00';
+                return;
+            }
+            cart.forEach(function (item, index) {
+                var name = typeof item === 'string' ? item : item.name;
+                var price = typeof item === 'string' ? DISH_PRICE : (item.price || DISH_PRICE);
+                total += price;
+                var li = document.createElement('li');
+                li.className = 'list-group-item p-2';
+                li.innerHTML = `
+                  <div class="row align-items-center no-gutters">
+                    <div class="col-7 col-md-7 text-truncate pr-1">
+                      <span class="d-block text-truncate" title="${name}">${name}</span>
+                    </div>
+                    <div class="col-4 col-md-4 text-right pr-0">
+                      <span class="text-success font-weight-bold mr-3">$${price.toFixed(2)}</span>
+                    </div>
+                    <div class="col-1 col-md-1 text-right pl-0">
+                      <button class="btn btn-sm btn-danger px-2 py-1" style="line-height:1;" onclick="removeFromCart(${index})" title="Eliminar"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                `;
+                cartList.appendChild(li);
+            });
+            if (cartTotal) cartTotal.textContent = '$' + total.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) { }
+            updateCartUI();
+            updateCartCountBubble();
+        }
+
+        function updateCartCountBubble() {
+            var bubble = document.getElementById('cartCountBubble');
+            var bubbleMobile = document.getElementById('cartCountBubbleMobile');
+            [bubble, bubbleMobile].forEach(function (b) {
+                if (!b) return;
+                if (cart.length > 0) {
+                    b.textContent = cart.length;
+                    b.style.display = 'inline-block';
+                } else {
+                    b.style.display = 'none';
+                }
+            });
+        }
+        // Initialize cart UI and bubble on page load
+        updateCartUI && updateCartUI();
+        updateCartCountBubble && updateCartCountBubble();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

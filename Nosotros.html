@@ -9,7 +9,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--FONT AWESOME-->
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
@@ -54,177 +54,177 @@
 
         /* Sección Historia */
         #historia {
-    padding: 60px 0;
-    background-color: white;
-}
+            padding: 60px 0;
+            background-color: white;
+        }
 
-.section-title {
-    font-weight: 700;
-    color: var(--dark-color);
-    margin-bottom: 50px;
-    position: relative;
-    text-align: center;
-    font-size: 2.5rem;
-}
+        .section-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 50px;
+            position: relative;
+            text-align: center;
+            font-size: 2.5rem;
+        }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    background: var(--secondary-color);
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 0;
-}
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: var(--primary-color);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-    border-radius: 10px;
-}
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
 
-.timeline-item {
-    padding: 10px 40px;
-    position: relative;
-    width: 50%;
-    box-sizing: border-box;
-}
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
 
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border: 4px solid var(--secondary-color);
-    border-radius: 50%;
-    top: 15px;
-    z-index: 1;
-}
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
 
-.timeline-item.left {
-    left: 0;
-    text-align: right;
-}
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
 
-.timeline-item.right {
-    left: 50%;
-    text-align: left;
-}
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
 
-.timeline-item.left::after {
-    right: -12px;
-}
+        .timeline-item.left::after {
+            right: -12px;
+        }
 
-.timeline-item.right::after {
-    left: -12px;
-}
+        .timeline-item.right::after {
+            left: -12px;
+        }
 
-.timeline-content {
-    padding: 20px 30px;
-    background-color: var(--light-color);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
 
-.timeline-year {
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
+        .timeline-year {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
 
-/* Media Queries para Responsive */
-@media (max-width: 992px) {
-    .section-title {
-        font-size: 2.2rem;
-    }
-    
-    .timeline-content {
-        padding: 15px 20px;
-    }
-}
+        /* Media Queries para Responsive */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
 
-@media (max-width: 768px) {
-    #historia {
-        padding: 40px 0;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-    
-    .timeline::after {
-        left: 31px;
-    }
-    
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-    
-    .timeline-item.left,
-    .timeline-item.right {
-        left: 0;
-        text-align: left;
-    }
-    
-    .timeline-item.left::after,
-    .timeline-item.right::after {
-        left: 21px;
-    }
-    
-    .timeline-item.right {
-        margin-top: 30px;
-    }
-}
+            .timeline-content {
+                padding: 15px 20px;
+            }
+        }
 
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .timeline-item {
-        padding-left: 50px;
-        padding-right: 15px;
-    }
-    
-    .timeline-item::after {
-        width: 20px;
-        height: 20px;
-        top: 12px;
-    }
-    
-    .timeline-content {
-        padding: 15px;
-    }
-    
-    .timeline-year {
-        font-size: 1rem;
-    }
-}
+        @media (max-width: 768px) {
+            #historia {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.left,
+            .timeline-item.right {
+                left: 0;
+                text-align: left;
+            }
+
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 21px;
+            }
+
+            .timeline-item.right {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 50px;
+                padding-right: 15px;
+            }
+
+            .timeline-item::after {
+                width: 20px;
+                height: 20px;
+                top: 12px;
+            }
+
+            .timeline-content {
+                padding: 15px;
+            }
+
+            .timeline-year {
+                font-size: 1rem;
+            }
+        }
 
         /* Sección Equipo */
         #equipo {
@@ -303,8 +303,6 @@
             margin-bottom: 15px;
             color: var(--dark-color);
         }
-
-        
     </style>
 </head>
 
@@ -313,8 +311,8 @@
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
                 <!-- Logo on the left -->
-                <a class="navbar-brand ml-3" href="index.html">
-                    <img src="lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
+                <a class="navbar-brand ml-3" href="../index.html">
+                    <img src="../lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
                 </a>
 
                 <!-- Toggle button for mobile -->
@@ -338,7 +336,9 @@
                         <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
                             data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
                             <i class="fa fa-shopping-cart fa-lg"></i>
-                            <span id="cartCountBubble" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                            <span id="cartCountBubble"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                         </button>
                     </div>
 
@@ -352,7 +352,8 @@
                         <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
                             onclick="toggleCart()" style="position: relative;">
                             <i class="fa fa-shopping-cart fa-lg"></i>
-                            <span id="cartCountBubbleMobile" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                            <span id="cartCountBubbleMobile"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
                         </button>
                     </div>
                 </div>
@@ -426,7 +427,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
     </section>
     <!-- Nosotros + Video -->
     <!-- Just the section that had missing closures and layout issues -->
@@ -597,6 +598,14 @@
         </div>
     </div>
     <div id="cartPanel">
+        <!-- Notification Toast -->
+        <div id="cartToast" class="toast position-fixed"
+            style="top: 20px; right: 20px; min-width: 200px; z-index: 2000; display: none; background: #28a745; color: white;"
+            data-delay="1500" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-center p-2">
+                <i class="fa fa-check-circle mr-2"></i>Producto agregado al carrito
+            </div>
+        </div>
         <div class="cart-header">
             <h5>Your Cart</h5>
             <button type="button" class="close" aria-label="Close" onclick="toggleCart()">
@@ -607,7 +616,14 @@
             <ul id="cartItems" class="list-group mb-3">
                 <li class="list-group-item">No items in cart</li>
             </ul>
-            <button class="btn btn-primary btn-block">Check-out</button>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="font-weight-bold">Total:</span>
+                <span id="cartTotal" class="font-weight-bold text-success">$0.00</span>
+            </div>
+            <button id="clearCartBtn" class="btn btn-danger btn-block mb-2" type="button" onclick="clearCart()">
+                <i class="fa fa-trash"></i> Vaciar carrito
+            </button>
+            <button class="btn btn-primary btn-block checkout">Check-out</button>
         </div>
     </div>
 
@@ -631,14 +647,36 @@
         });
     </script>
     <script>
+        function clearCart() {
+            cart = [];
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) { }
+            updateCartUI();
+            updateCartCountBubble();
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var loginForm = document.querySelector('#loginModal form');
+            var loginLinks = document.querySelectorAll('.navbar .login-link');
+
+            if (loginForm && loginLinks.length > 0) {
+                loginForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    $('#loginModal').modal('hide');
+                    // Hide all login links
+                    loginLinks.forEach(function (link) {
+                        link.style.display = 'none';
+                    });
+                });
+            }
+        });
+    </script>
+    <script>
         function toggleCart() {
             var cartPanel = document.getElementById('cartPanel');
             cartPanel.classList.toggle('open');
         }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
     <script>
         // Load cart from localStorage or initialize
         var cart = [];
@@ -649,39 +687,76 @@
             }
         } catch (e) { cart = []; }
 
-        function addToCart(productName) {
-            cart.push(productName);
+
+        // All dishes are $9.99 for reference
+        var DISH_PRICE = 9.99;
+        function addToCart(product) {
+            // Accepts either a string (old) or an object {name, price}
+            if (typeof product === 'string') {
+                cart.push({ name: product, price: DISH_PRICE });
+            } else {
+                cart.push(product);
+            }
             try {
                 localStorage.setItem('cart', JSON.stringify(cart));
-            } catch (e) {}
+            } catch (e) { }
             updateCartUI();
             updateCartCountBubble();
+            showCartToast();
+        }
+
+        // Show notification toast when item is added
+        function showCartToast() {
+            var toast = document.getElementById('cartToast');
+            if (!toast) return;
+            toast.style.display = 'block';
+            toast.classList.add('show');
+            setTimeout(function () {
+                toast.classList.remove('show');
+                toast.style.display = 'none';
+            }, 1500);
         }
 
         function updateCartUI() {
             var cartList = document.getElementById('cartItems');
+            var cartTotal = document.getElementById('cartTotal');
             if (!cartList) return;
             cartList.innerHTML = '';
+            var total = 0;
             if (cart.length === 0) {
                 cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
+                if (cartTotal) cartTotal.textContent = '$0.00';
                 return;
             }
             cart.forEach(function (item, index) {
+                var name = typeof item === 'string' ? item : item.name;
+                var price = typeof item === 'string' ? DISH_PRICE : (item.price || DISH_PRICE);
+                total += price;
                 var li = document.createElement('li');
-                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.className = 'list-group-item p-2';
                 li.innerHTML = `
-                ${item}
-                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">&times;</button>
-            `;
+                  <div class="row align-items-center no-gutters">
+                    <div class="col-7 col-md-7 text-truncate pr-1">
+                      <span class="d-block text-truncate" title="${name}">${name}</span>
+                    </div>
+                    <div class="col-4 col-md-4 text-right pr-0">
+                      <span class="text-success font-weight-bold mr-3">$${price.toFixed(2)}</span>
+                    </div>
+                    <div class="col-1 col-md-1 text-right pl-0">
+                      <button class="btn btn-sm btn-danger px-2 py-1" style="line-height:1;" onclick="removeFromCart(${index})" title="Eliminar"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                `;
                 cartList.appendChild(li);
             });
+            if (cartTotal) cartTotal.textContent = '$' + total.toFixed(2);
         }
 
         function removeFromCart(index) {
             cart.splice(index, 1);
             try {
                 localStorage.setItem('cart', JSON.stringify(cart));
-            } catch (e) {}
+            } catch (e) { }
             updateCartUI();
             updateCartCountBubble();
         }
@@ -689,7 +764,7 @@
         function updateCartCountBubble() {
             var bubble = document.getElementById('cartCountBubble');
             var bubbleMobile = document.getElementById('cartCountBubbleMobile');
-            [bubble, bubbleMobile].forEach(function(b) {
+            [bubble, bubbleMobile].forEach(function (b) {
                 if (!b) return;
                 if (cart.length > 0) {
                     b.textContent = cart.length;
@@ -703,9 +778,13 @@
         updateCartUI && updateCartUI();
         updateCartCountBubble && updateCartCountBubble();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <script src="checkout.js"></script>
 </body>
 
 </html>

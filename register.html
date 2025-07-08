@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
+                <!-- Logo on the left -->
+                <a class="navbar-brand ml-3" href="../index.html">
+                    <img src="../lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
+                </a>
+
+                <!-- Toggle button for mobile -->
+                <button class="navbar-toggler ml-auto mr-3" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Real collapse container -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav custom-center-nav d-none d-lg-flex">
+                        <a class="nav-link px-4" href="Menu.html">Menu</a>
+                        <a class="nav-link px-4" href="Nosotros.html">Nosotros</a>
+                        <a class="nav-link px-4" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Ingresar</a>
+                    </div>
+
+                    <div class="ml-auto d-flex align-items-center">
+                        <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
+                            data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubble"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
+                        </button>
+                    </div>
+
+                    <!-- Mobile menu (visible only on small screens) -->
+                    <div class="navbar-nav d-lg-none text-center w-100 mt-2">
+                        <a class="nav-link" href="Menu.html">Menu</a>
+                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
+                        <a class="nav-link" href="Locales.html">Locales</a>
+                        <a class="nav-link px-4 login-link" href="#" data-toggle="modal"
+                            data-target="#loginModal">Login</a>
+                        <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
+                            onclick="toggleCart()" style="position: relative;">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                            <span id="cartCountBubbleMobile"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <script src="checkout.js"></script>
+</body>
+</html>

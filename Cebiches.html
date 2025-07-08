@@ -21,8 +21,8 @@
         <div class="container-fluid px-0">
             <nav class="navbar navbar-expand-lg navbar-light w-100 cabeza position-relative px-0">
                 <!-- Logo on the left -->
-                <a class="navbar-brand ml-3" href="index.html">
-                    <img src="lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
+                <a class="navbar-brand ml-3" href="../index.html">
+                    <img src="../lcr.png" alt="Logo" class="img-responsive" style="height: 50px;">
                 </a>
 
                 <!-- Toggle button for mobile -->
@@ -46,7 +46,9 @@
                         <button class="btn btn-link nav-link px-4 d-none d-lg-block" data-toggle="modal"
                             data-target="#cartModal" onclick="toggleCart()" style="position: relative;">
                             <i class="fa fa-shopping-cart fa-lg"></i>
-                            <span id="cartCountBubble" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                            <span id="cartCountBubble"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                        </button>
                         </button>
                     </div>
 
@@ -60,7 +62,8 @@
                         <button class="btn btn-link nav-link px-4" data-toggle="modal" data-target="#cartModal"
                             onclick="toggleCart()" style="position: relative;">
                             <i class="fa fa-shopping-cart fa-lg"></i>
-                            <span id="cartCountBubbleMobile" style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
+                            <span id="cartCountBubbleMobile"
+                                style="display:none; position:absolute; top:6px; right:10px; min-width:20px; height:20px; background:orange; color:white; border-radius:50%; font-size:13px; font-weight:bold; line-height:20px; text-align:center; padding:0 5px; z-index:2;"></span>
                         </button>
                     </div>
                 </div>
@@ -71,95 +74,349 @@
         <h3 class="section-title my-3">Cebiches</h3>
         <div class="row">
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/Cevichedepescado.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche de Pescado</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/Cevichedepescado.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/cebiche_de_pescado copy.jpg" alt="Desayuno">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche de Pescado</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); showCebichePescadoOptions()">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
+                        <!-- Modal for Cebiche de Pescado options -->
+                        <div class="modal fade" id="cebichePescadoModal" tabindex="-1" role="dialog"
+                            aria-labelledby="cebichePescadoModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <style>
+                                        /* Ensure the Cebiche de Pescado modal is always vertically centered */
+                                        @media (min-width: 576px) {
+                                            #cebichePescadoModal .modal-dialog {
+                                                display: flex;
+                                                align-items: center;
+                                                min-height: calc(100vh - 1rem);
+                                            }
+                                        }
+                                    </style>
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cebichePescadoModalLabel">Selecciona el tipo de
+                                            Cebiche de Pescado</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="d-flex justify-content-center mb-2">
+                                            <div class="form-check mr-4">
+                                                <input class="form-check-input" type="radio" name="cebichePescadoTipo"
+                                                    id="cebicheCompleto" value="Completo" checked>
+                                                <label class="form-check-label" for="cebicheCompleto">Completo</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="cebichePescadoTipo"
+                                                    id="cebicheJunior" value="Junior">
+                                                <label class="form-check-label" for="cebicheJunior">Junior</label>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-2">
+                                            <span class="mr-5">$9.99</span>
+                                            <span>$4.99</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="addCebichePescadoToCart()">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/CebicheCamaron.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche de Camaron</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/CebicheCamaron.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/CEBICHE_CAMARON copy.jpg" alt="Desayuno">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche de Camaron</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); showCebicheCamaronOptions()">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
+                    <!-- Modal for Cebiche de Camaron options -->
+                    <div class="modal fade" id="cebicheCamaronModal" tabindex="-1" role="dialog"
+                        aria-labelledby="cebicheCamaronModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cebicheCamaronModalLabel">Selecciona el tamaño</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <div class="form-check mr-4">
+                                            <input class="form-check-input" type="radio" name="cebicheCamaronTipo"
+                                                id="cebicheCamaronEntero" value="Entero" checked>
+                                            <label class="form-check-label" for="cebicheCamaronEntero">Entero</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cebicheCamaronTipo"
+                                                id="cebicheCamaronJunior" value="Junior">
+                                            <label class="form-check-label" for="cebicheCamaronJunior">Junior</label>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <span class="mr-5">$9.99</span>
+                                        <span>$4.99</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="addCebicheCamaronToCart()">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // Show modal for Cebiche de Camaron options
+                        function showCebicheCamaronOptions() {
+                            $('#cebicheCamaronModal').modal('show');
+                        }
+                        // Add Cebiche de Camaron with selected option to cart
+                        function addCebicheCamaronToCart() {
+                            var tipo = document.querySelector('input[name="cebicheCamaronTipo"]:checked').value;
+                            var price = tipo === 'Entero' ? 9.99 : 4.99;
+                            addToCart({ name: 'Cebiche de Camaron (' + tipo + ')', price: price });
+                            $('#cebicheCamaronModal').modal('hide');
+                        }
+                    </script>
                 </div>
-            </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/Mixto.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche Mixto</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/Mixto.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/CEB_MIXTO copy.jpg" alt="Desayuno">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche Mixto</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); addToCart('Cebiche Mixto')">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
                 </div>
-            </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/Almani.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche al Mani de Pescado</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/Almani.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/cebiche_al_mani_ copy.jpg" alt="Desayuno">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche al Mani de pescado</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); addToCart('Cebiche al Mani de pescado')">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
                 </div>
-            </a>
             </div>
 
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/manicangrejo.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche al Mani de Camaron</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/manicangrejo.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/CEB_MANI_CAMARON copy.jpg" alt="Cebiche al Mani de Camaron">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche al Mani de Camaron</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); addToCart('Cebiche al Mani de Camaron')">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
                 </div>
-            </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/CevicheMarinero.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche Marinero</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/CevicheMarinero.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/CEB_MARINERO copy.jpg" alt="Cebiche Marinero">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche Marinero</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto"
+                            onclick="event.stopPropagation(); addToCart('Cebiche Marinero')">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
                 </div>
-            </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/CevichedeConcha.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche de Concha</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/CevichedeCalamar.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/cebiche_calamar copy.jpg" alt="Cebiche de Calamar">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche de Calamar</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto" onclick="event.stopPropagation(); showCebicheCalamarOptions()">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
+                    <!-- Modal for Cebiche de Calamar options -->
+                    <div class="modal fade" id="cebicheCalamarModal" tabindex="-1" role="dialog" aria-labelledby="cebicheCalamarModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cebicheCalamarModalLabel">Selecciona el tamaño</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <div class="form-check mr-4">
+                                            <input class="form-check-input" type="radio" name="cebicheCalamarTipo" id="cebicheCalamarEntero" value="Entero" checked>
+                                            <label class="form-check-label" for="cebicheCalamarEntero">Entero</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cebicheCalamarTipo" id="cebicheCalamarJunior" value="Junior">
+                                            <label class="form-check-label" for="cebicheCalamarJunior">Junior</label>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <span class="mr-5">$9.99</span>
+                                        <span>$4.99</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" onclick="addCebicheCalamarToCart()">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // Show modal for Cebiche de Calamar options
+                        function showCebicheCalamarOptions() {
+                            $('#cebicheCalamarModal').modal('show');
+                        }
+                        // Add Cebiche de Calamar with selected option to cart
+                        function addCebicheCalamarToCart() {
+                            var tipo = document.querySelector('input[name="cebicheCalamarTipo"]:checked').value;
+                            var price = tipo === 'Entero' ? 9.99 : 4.99;
+                            addToCart({ name: 'Cebiche de Calamar (' + tipo + ')', price: price });
+                            $('#cebicheCalamarModal').modal('hide');
+                        }
+                    </script>
                 </div>
-            </a>
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/CevichedeCalamar.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche de Calamar</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/CevichedeConcha.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/CEB_CONCHA copy.jpg" alt="Cebiche de Concha">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche de Concha</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto" onclick="event.stopPropagation(); showCebicheConchaOptions()">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
+                    <!-- Modal for Cebiche de Concha options -->
+                    <div class="modal fade" id="cebicheConchaModal" tabindex="-1" role="dialog" aria-labelledby="cebicheConchaModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cebicheConchaModalLabel">Selecciona el tamaño</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <div class="form-check mr-4">
+                                            <input class="form-check-input" type="radio" name="cebicheConchaTipo" id="cebicheConchaEntero" value="Entero" checked>
+                                            <label class="form-check-label" for="cebicheConchaEntero">Entero</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="cebicheConchaTipo" id="cebicheConchaJunior" value="Junior">
+                                            <label class="form-check-label" for="cebicheConchaJunior">Junior</label>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <span class="mr-5">$9.99</span>
+                                        <span>$4.99</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" onclick="addCebicheConchaToCart()">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // Show modal for Cebiche de Concha options
+                        function showCebicheConchaOptions() {
+                            $('#cebicheConchaModal').modal('show');
+                        }
+                        // Add Cebiche de Concha with selected option to cart
+                        function addCebicheConchaToCart() {
+                            var tipo = document.querySelector('input[name="cebicheConchaTipo"]:checked').value;
+                            var price = tipo === 'Entero' ? 9.99 : 4.99;
+                            addToCart({ name: 'Cebiche de Concha (' + tipo + ')', price: price });
+                            $('#cebicheConchaModal').modal('hide');
+                        }
+                    </script>
                 </div>
-            </a>
+            </div>
+
             </div>
             <div class="col-6 col-md-3 mb-4">
-                <a href="platos/CevichedeCangrejo.html">
-                <div class="card">
-                    <img class="card-img-top" src="https://placehold.co/600x400" alt="Desayuno">
-                    <div class="card-body text-center p-2">
-                        <p class="card-text mb-0">Cebiche de Cangrejo</p>
+                <div class="card h-100 d-flex flex-column">
+                    <a href="platos/CevichedeCangrejo.html" style="text-decoration: none; color: inherit;">
+                        <img class="card-img-top" src="Done/cebiche_cangrejo copy.jpg" alt="Cebiche de Cangrejo">
+                        <div class="card-body text-center p-2">
+                            <p class="card-text mb-0">Cebiche de Cangrejo</p>
+                            <p class="card-text text-success font-weight-bold mb-0">$9.99</p>
+                        </div>
+                    </a>
+                    <div class="card-footer bg-white border-0 d-flex justify-content-center mt-auto">
+                        <button class="btn btn-primary mt-2 mx-auto" onclick="event.stopPropagation(); addToCart('Cebiche de Cangrejo')">
+                            <i class="fa fa-plus"></i> Agregar
+                        </button>
                     </div>
                 </div>
-            </a>
             </div>
         </div>
     </div>
@@ -226,6 +483,14 @@
         </div>
     </div>
     <div id="cartPanel">
+        <!-- Notification Toast -->
+        <div id="cartToast" class="toast position-fixed"
+            style="top: 20px; right: 20px; min-width: 200px; z-index: 2000; display: none; background: #28a745; color: white;"
+            data-delay="1500" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-center p-2">
+                <i class="fa fa-check-circle mr-2"></i>Producto agregado al carrito
+            </div>
+        </div>
         <div class="cart-header">
             <h5>Your Cart</h5>
             <button type="button" class="close" aria-label="Close" onclick="toggleCart()">
@@ -236,13 +501,40 @@
             <ul id="cartItems" class="list-group mb-3">
                 <li class="list-group-item">No items in cart</li>
             </ul>
-            <button class="btn btn-primary btn-block">Check-out</button>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="font-weight-bold">Total:</span>
+                <span id="cartTotal" class="font-weight-bold text-success">$0.00</span>
+            </div>
+            <button id="clearCartBtn" class="btn btn-danger btn-block mb-2" type="button" onclick="clearCart()">
+                <i class="fa fa-trash"></i> Vaciar carrito
+            </button>
+            <button class="btn btn-primary btn-block checkout">Check-out</button>
         </div>
     </div>
 
 
     <!-- Scripts -->
     <script>
+        // Show modal for Cebiche de Pescado options
+        function showCebichePescadoOptions() {
+            $('#cebichePescadoModal').modal('show');
+        }
+
+        // Add Cebiche de Pescado with selected option to cart
+        function addCebichePescadoToCart() {
+            var tipo = document.querySelector('input[name="cebichePescadoTipo"]:checked').value;
+            var price = tipo === 'Completo' ? 9.99 : 4.99;
+            addToCart({ name: 'Cebiche de Pescado (' + tipo + ')', price: price });
+            $('#cebichePescadoModal').modal('hide');
+        }
+        function clearCart() {
+            cart = [];
+            try {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            } catch (e) { }
+            updateCartUI();
+            updateCartCountBubble();
+        }
         document.addEventListener('DOMContentLoaded', function () {
             var loginForm = document.querySelector('#loginModal form');
             var loginLinks = document.querySelectorAll('.navbar .login-link');
@@ -275,39 +567,76 @@
             }
         } catch (e) { cart = []; }
 
-        function addToCart(productName) {
-            cart.push(productName);
+
+        // All dishes are $9.99 for reference
+        var DISH_PRICE = 9.99;
+        function addToCart(product) {
+            // Accepts either a string (old) or an object {name, price}
+            if (typeof product === 'string') {
+                cart.push({ name: product, price: DISH_PRICE });
+            } else {
+                cart.push(product);
+            }
             try {
                 localStorage.setItem('cart', JSON.stringify(cart));
-            } catch (e) {}
+            } catch (e) { }
             updateCartUI();
             updateCartCountBubble();
+            showCartToast();
+        }
+
+        // Show notification toast when item is added
+        function showCartToast() {
+            var toast = document.getElementById('cartToast');
+            if (!toast) return;
+            toast.style.display = 'block';
+            toast.classList.add('show');
+            setTimeout(function () {
+                toast.classList.remove('show');
+                toast.style.display = 'none';
+            }, 1500);
         }
 
         function updateCartUI() {
             var cartList = document.getElementById('cartItems');
+            var cartTotal = document.getElementById('cartTotal');
             if (!cartList) return;
             cartList.innerHTML = '';
+            var total = 0;
             if (cart.length === 0) {
                 cartList.innerHTML = '<li class="list-group-item">No items in cart</li>';
+                if (cartTotal) cartTotal.textContent = '$0.00';
                 return;
             }
             cart.forEach(function (item, index) {
+                var name = typeof item === 'string' ? item : item.name;
+                var price = typeof item === 'string' ? DISH_PRICE : (item.price || DISH_PRICE);
+                total += price;
                 var li = document.createElement('li');
-                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.className = 'list-group-item p-2';
                 li.innerHTML = `
-                ${item}
-                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">&times;</button>
-            `;
+                  <div class="row align-items-center no-gutters">
+                    <div class="col-7 col-md-7 text-truncate pr-1">
+                      <span class="d-block text-truncate" title="${name}">${name}</span>
+                    </div>
+                    <div class="col-4 col-md-4 text-right pr-0">
+                      <span class="text-success font-weight-bold mr-3">$${price.toFixed(2)}</span>
+                    </div>
+                    <div class="col-1 col-md-1 text-right pl-0">
+                      <button class="btn btn-sm btn-danger px-2 py-1" style="line-height:1;" onclick="removeFromCart(${index})" title="Eliminar"><i class="fa fa-times"></i></button>
+                    </div>
+                  </div>
+                `;
                 cartList.appendChild(li);
             });
+            if (cartTotal) cartTotal.textContent = '$' + total.toFixed(2);
         }
 
         function removeFromCart(index) {
             cart.splice(index, 1);
             try {
                 localStorage.setItem('cart', JSON.stringify(cart));
-            } catch (e) {}
+            } catch (e) { }
             updateCartUI();
             updateCartCountBubble();
         }
@@ -315,7 +644,7 @@
         function updateCartCountBubble() {
             var bubble = document.getElementById('cartCountBubble');
             var bubbleMobile = document.getElementById('cartCountBubbleMobile');
-            [bubble, bubbleMobile].forEach(function(b) {
+            [bubble, bubbleMobile].forEach(function (b) {
                 if (!b) return;
                 if (cart.length > 0) {
                     b.textContent = cart.length;
@@ -335,6 +664,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <script src="checkout.js"></script>
 </body>
 
 </html>
